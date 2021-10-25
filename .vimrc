@@ -28,11 +28,11 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+      \| PlugInstall --sync | source $MYVIMRC
+      \| endif
 
 call plug#begin()
 Plug 'hashivim/vim-terraform'
@@ -81,7 +81,7 @@ nmap <C-_> <leader>c<Space>
 vmap <C-_> <leader>c<Space>
 
 if executable('rls')
-    au User lsp_setup call lsp#register_server({
+  au User lsp_setup call lsp#register_server({
         \ 'name': 'rls',
         \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
         \ 'whitelist': ['rust'],
@@ -89,13 +89,13 @@ if executable('rls')
 endif 
 
 if has("persistent_undo")
-   let target_path = expand('~/.vim/undodir')
-    if !isdirectory(target_path)
-        call mkdir(target_path, "p", 0700)
-    endif
-
-    let &undodir=target_path
-    set undofile
+  let target_path = expand('~/.vim/undodir')
+  if !isdirectory(target_path)
+    call mkdir(target_path, "p", 0700)
   endif
-  
+
+  let &undodir=target_path
+  set undofile
+endif
+
 packloadall
