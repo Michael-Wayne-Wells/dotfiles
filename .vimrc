@@ -18,6 +18,7 @@ set background=dark
 set number
 set relativenumber
 set scrolloff=8
+set path+=**
 
 let mapleader = " "
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -34,6 +35,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 
 call plug#begin()
+Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -51,7 +53,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'mbbill/undotree'
-Plug 'git://git.wincent.com/command-t.git'
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -67,6 +68,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <leader>t :TerraformFmt<CR>
 autocmd VimEnter * NERDTree | wincmd p
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
