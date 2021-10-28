@@ -1,14 +1,12 @@
-npm install --global yarn
+git clone https://github.com/Nike-Inc/gimme-aws-creds.git
 git clone https://bitbucket.nike.com/scm/cicexp/browse.git
 ./bin/setup-proxy.sh
 npm install --global yarn
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 brew install neovim
-git clone https://github.com/Nike-Inc/gimme-aws-creds.git
-brew install python3
+brew install vim
 pip3 install cryptography
 pip3 install awscli --user --upgrade
 pip3 install --upgrade gimme-aws-creds

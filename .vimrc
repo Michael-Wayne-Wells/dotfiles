@@ -10,7 +10,6 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -19,6 +18,18 @@ set number
 set relativenumber
 set scrolloff=8
 set path+=**
+"______________/**** SEARCH ****\_____________________
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+highlight clear search
+highlight search ctermfg=164
+"______________/**** FORMAT ****\_____________________
+set list listchars=tab:⇥␣,trail:␣ " Highlight whitespace
+set autoindent                    " Retain indentation on next line
+set smartindent                   " Turn on autoindenting of blocks
+set copyindent
 
 let mapleader = " "
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -35,8 +46,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
       \| endif
 
 call plug#begin()
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ycm-core/YouCompleteMe'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
 Plug 'rust-lang/rls'
