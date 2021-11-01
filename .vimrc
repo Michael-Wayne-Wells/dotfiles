@@ -47,6 +47,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 call plug#begin()
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'hashivim/vim-terraform'
 Plug 'rust-lang/rust.vim'
@@ -77,6 +79,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>t :TerraformFmt<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>f :CtrlP<CR>
 autocmd VimEnter * NERDTree | wincmd p
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
