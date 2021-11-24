@@ -1,0 +1,29 @@
+[color]
+  ui = true
+[user]
+	name = Mikey Wells
+  email = me@mikeywells.dev
+[core]
+	excludesfile = /Users/MWel18/.gitignore_global
+	editor = vim
+[usder]
+  email = me@mikeywells.dev
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[alias]
+  st = status --short --branch
+  cma = commit --all -m
+  lg = log --pretty='%Cred%h%Creset | %C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)[%an]%Creset' --graph --all
+  so = show --pretty='parent %Cred%p%Creset commit %Cred%h%Creset%C(yellow)%d%Creset%n%n%w(72,2,2)%s%n%n%w(72,0,0)%C(cyan)%an%Creset %Cgreen%ar%Creset'
+  ac = !git add -A && git commit -m
+  oops = reset --soft HEAD^
+	se = !git rev-list --all | xargs git grep -F
+	pu = !git push -u origin HEAD
+	dv = difftool -t vimdiff -y
+  co = checkout
+	d = diff
+[init]
+  defaultBranch = main
